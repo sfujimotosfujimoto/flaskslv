@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "code"
+		}
+	],
+	"settings": {
+		"python.pythonPath": ".venv/bin/python"
+	}
+}
