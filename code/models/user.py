@@ -1,11 +1,16 @@
 import sqlite3
 from sqlite3 import Connection, Cursor
 from typing import List
+from db import db
 
-from models.user import UserModel
 
+class UserModel(db.Model):
+    __tablename__ = "users"
 
-class UserModel:
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80))
+    password = db.Column(db.String(80))
+
     def __init__(self, _id, username, password) -> None:
         self.id = _id
         self.username = username

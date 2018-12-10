@@ -8,6 +8,8 @@ from resources.user import UserRegister
 from resources.item import Item, ItemList
 
 app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 CORS(app)
 app.secret_key = "sf"
 api = Api(app)
@@ -32,5 +34,7 @@ def index():
 
 
 if __name__ == "__main__":
+    from db import db
+
+    db.init_app(app)
     app.run(host="0.0.0.0", port=5000)
-# app.run(port=5000, debug=True)
