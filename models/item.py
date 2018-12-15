@@ -1,3 +1,5 @@
+from os import sys
+
 from sqlalchemy.orm import relationship
 
 from db import db
@@ -32,3 +34,4 @@ class ItemModel(db.Model):
     def delete_from_db(self) -> None:
         db.session.delete(self)
         db.session.commit()
+

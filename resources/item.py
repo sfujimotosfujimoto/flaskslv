@@ -1,6 +1,9 @@
-from flask_restful import Resource, reqparse
-from flask_jwt import jwt_required
+from os import path
 from typing import Dict, Optional, Tuple, Union
+
+from flask_jwt import jwt_required
+from flask_restful import Resource, reqparse
+
 from models.item import ItemModel
 
 
@@ -65,3 +68,4 @@ class ItemList(Resource):
     def get(self) -> dict:
         return {"items": [item.json for item in ItemModel.query.all()]}
         # list(map(lambda x: x.json(), ItemModel.query.all()))
+
