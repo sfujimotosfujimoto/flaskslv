@@ -1,4 +1,5 @@
-from flask import Flask, request
+import os
+from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT
 from flask_cors import CORS
@@ -9,7 +10,10 @@ from resources.item import Item, ItemList
 from resources.store import Store, StoreList
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
+# get sqlite if DATABASE_URL is not given from heroku
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get(
+    "DATABASE_URL", "sqlite:///data.db"
+)
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 CORS(app)
 app.secret_key = "sf"
