@@ -121,6 +121,6 @@ dmypy.json
 *.db
 .env
 templates/
-requirements.txt
+
 test.py
 view.py
