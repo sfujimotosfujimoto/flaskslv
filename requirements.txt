@@ -37,4 +37,4 @@ virtualenv-clone==0.3.0
 Werkzeug==0.14.1
 wrapt==1.10.11
 WTForms==2.2.1
-uwsgi
+uwsgi==2.0.15
