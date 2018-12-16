@@ -30,13 +30,13 @@ api.add_resource(UserRegister, "/register")
 api.add_resource(Store, "/store/<string:name>")
 api.add_resource(StoreList, "/stores")
 
-from flask import render_template, request
+# from flask import render_template, request
 
 
-@app.route("/")
-def index():
-    data = "Hello World!"
-    return render_template("index.html", data=data)
+# @app.route("/")
+# def index():
+#     data = "Hello World!"
+#     return render_template("index.html", data=data)
 
 
 if __name__ == "__main__":
